@@ -27,7 +27,10 @@ const NoteList = ({ notes }: Props) => {
               <p className={css.content}>{note.content}</p>
               <div className={css.footer}>
                 <span className={css.tag}>{note.tag}</span>
-                <button onClick={() => mutate(note.id)} className={css.button}>
+                <button
+                  onClick={() => mutate(Number(note.id))}
+                  className={css.button}
+                >
                   Delete
                 </button>
               </div>

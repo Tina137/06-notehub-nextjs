@@ -6,12 +6,9 @@ import {
 import { getSingleNote } from "@/lib/api";
 import NoteDetailsClient from "./NoteDetails.client";
 
-type Props = {
-  params: { id: string };
-};
+const NoteDetails = async ({ params }: { params: { id: string } }) => {
+  const { id } = params;
 
-const NoteDetails = async ({ params }: Props) => {
-  const { id } = await params;
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
