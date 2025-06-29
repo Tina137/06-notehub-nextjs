@@ -25,9 +25,7 @@ const Notes = () => {
     setPage(1);
     setInputValue(e);
   };
-  if (data) {
-    console.log(data);
-  }
+
   return (
     <>
       <div className={css.app}>
@@ -41,7 +39,7 @@ const Notes = () => {
             />
           )}
         </header>
-        {data && <NoteList notesArr={data.notes} />}
+        {data && <NoteList notes={data.notes} />}
       </div>
     </>
   );

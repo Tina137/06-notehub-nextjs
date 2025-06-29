@@ -50,5 +50,16 @@ async function deleteList(listId: number) {
   );
   return res.data;
 }
+export const getSingleNote = async (id: string) => {
+  const res = await axios.get<Note>(
+    `https://notehub-public.goit.study/api/notes/${id}`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_NOTEHUB_TOKEN}`,
+      },
+    }
+  );
+  return res.data;
+};
 
 export { postList, deleteList };

@@ -1,12 +1,12 @@
-export type Note = {
+export interface Note {
   id: number;
   title: string;
   content: string;
   tag: string;
-};
+}
 
-export type InitialValuesProps = {
+export interface InitialValuesProps {
   title: string;
   content: string;
   tag: string;
-};
+}
