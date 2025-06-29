@@ -6,8 +6,12 @@ import {
 import { getSingleNote } from "@/lib/api";
 import NoteDetailsClient from "./NoteDetails.client";
 
-const NoteDetails = async ({ params }: { params: { id: string } }) => {
-  const { id } = params;
+type Props = {
+  params: Promise<{ id: string }>;
+};
+
+const NoteDetails = async ({ params }: Props) => {
+  const { id } = await params;
 
   const queryClient = new QueryClient();
 
